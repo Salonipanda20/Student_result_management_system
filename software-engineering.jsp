@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algorithms- Registered Students</title>
+    <title>software-engineering- Registered Students</title>
     <style>
         /* Styling as before */
         body {
@@ -76,11 +76,11 @@
 </head>
 <body>
 
-    <h1>Algorithms- Registered Students</h1>
+    <h1>software-engineering- Registered Students</h1>
 
     <!-- Input form for student details -->
     <div class="form-container">
-        <form action="algorithms.jsp" method="post">
+        <form action="software-engineering.jsp" method="post">
             <input type="hidden" name="action" value="add" />
             <input type="text" name="name" placeholder="Name" value="<%= request.getParameter("name") %>" required />
             <input type="text" name="rollNo" placeholder="Roll No" value="<%= request.getParameter("rollNo") %>" required />
@@ -129,13 +129,13 @@
                 students.add(student);
             }
             session.setAttribute("students", students);
-            response.sendRedirect("algorithms.jsp");
+            response.sendRedirect("software-engineering.jsp");
             return;
         } else if ("delete".equalsIgnoreCase(action) && rollNo != null) {
             // Delete student with matching roll number
             students.removeIf(student -> rollNo.equals(student.get("rollNo")));
             session.setAttribute("students", students);
-            response.sendRedirect("algorithms.jsp");
+            response.sendRedirect("software-engineering.jsp");
             return;
         }
     %>
@@ -164,8 +164,8 @@
                     <td><%= student.get("fatherName") %></td>
                     <td><%= student.get("gender") %></td>
                     <td>
-                        <a href="algorithms.jsp?action=update&rollNo=<%= student.get("rollNo") %>" class="action-btn update-btn">Update</a>
-                        <a href="algorithms.jsp?action=delete&rollNo=<%= student.get("rollNo") %>" class="action-btn delete-btn" onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+                        <a href="software-engineering.jsp?action=update&rollNo=<%= student.get("rollNo") %>" class="action-btn update-btn">Update</a>
+                        <a href="software-engineering.jsp?action=delete&rollNo=<%= student.get("rollNo") %>" class="action-btn delete-btn" onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
                     </td>
                 </tr>
             <%
