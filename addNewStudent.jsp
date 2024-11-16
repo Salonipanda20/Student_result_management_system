@@ -1,4 +1,4 @@
-<%@ page import= "com.resultmanagement.database.ConnectionProvider"%>
+<%@ page import= "Project.ConnectionProvider"%>
 <%@ page import= "java.sql.*"%>
 <%
 String course =request.getParameter("course");
